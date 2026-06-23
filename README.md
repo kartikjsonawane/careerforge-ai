@@ -491,7 +491,7 @@ MIT License — see [LICENSE](./LICENSE) for details.
 ## Author
 
 **Kartik Sonawane**
-- GitHub: [@kartiksonawane](https://github.com/kartiksonawane)
+- GitHub: [@kartikjsonawane](https://github.com/kartikjsonawane)
 - Email: kartikjaywantsonawane@gmail.com
 
 ---
