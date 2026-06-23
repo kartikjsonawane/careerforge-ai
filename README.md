@@ -1,6 +1,8 @@
 # CareerForge AI — Career Operating System
 
-> An AI-powered platform for students and engineers to analyze resumes, close skill gaps, practice interviews, and accelerate career growth — powered by Gemini AI, RAG, and a multi-agent architecture.
+> An AI-powered platform for students and engineers to analyze resumes, close skill gaps, practice interviews, and accelerate career growth — powered by Groq AI, RAG, and a multi-agent architecture.
+
+**Built by [Kartik Sonawane](https://github.com/kartiksonawane)**
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.112-009688?logo=fastapi)](https://fastapi.tiangolo.com)
@@ -331,16 +333,16 @@ careerforge/
 
 ### Prerequisites
 - Node.js 20+
-- Python 3.11+
+- Python 3.12+
 - MongoDB Atlas account (free tier)
 - Pinecone account (free tier)
-- Google AI Studio (Gemini API key)
-- Google Cloud project (OAuth credentials)
+- Groq API key (free tier at console.groq.com)
+- Google Cloud project (OAuth credentials, optional)
 
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/your-org/careerforge-ai.git
+git clone https://github.com/kartiksonawane/careerforge-ai.git
 cd careerforge-ai
 ```
 
@@ -426,9 +428,9 @@ Set environment variables in Vercel dashboard:
 2. Create index: name=`careerforge`, dimension=`768`, metric=`cosine`
 3. Copy API key to `PINECONE_API_KEY`
 
-### Gemini API
-1. Get API key from [Google AI Studio](https://aistudio.google.com)
-2. Copy to `GEMINI_API_KEY`
+### Groq API
+1. Get free API key from [console.groq.com](https://console.groq.com)
+2. Copy to `GROQ_API_KEY`
 
 ---
 
@@ -486,4 +488,12 @@ MIT License — see [LICENSE](./LICENSE) for details.
 
 ---
 
-*Built with Gemini AI, Pinecone, MongoDB Atlas, and a lot of caffeine.*
+## Author
+
+**Kartik Sonawane**
+- GitHub: [@kartiksonawane](https://github.com/kartiksonawane)
+- Email: kartikjaywantsonawane@gmail.com
+
+---
+
+*Built with Groq AI (LLaMA 3.3 70B), Pinecone, MongoDB Atlas, and a lot of caffeine.*
