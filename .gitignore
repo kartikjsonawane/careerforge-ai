@@ -1,0 +1,33 @@
+# Environment files — NEVER commit these
+.env
+.env.local
+.env.production
+.env.development
+
+# Node
+node_modules/
+dist/
+.next/
+.turbo/
+*.log
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Uploads
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

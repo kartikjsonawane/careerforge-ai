@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  # ── Frontend ────────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000/api
+      - NEXT_PUBLIC_AI_URL=http://localhost:8000
+      - NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - careerforge-net
+
+  # ── Node.js API Gateway ─────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - ai-services
+    volumes:
+      - uploads:/app/uploads
+      - logs:/app/logs
+    networks:
+      - careerforge-net
+    restart: unless-stopped
+
+  # ── FastAPI AI Services ─────────────────────────────────────────────────────
+  ai-services:
+    build:
+      context: ./ai-services
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./ai-services/.env
+    environment:
+      - WORKERS=2
+    volumes:
+      - uploads:/app/uploads
+    networks:
+      - careerforge-net
+    restart: unless-stopped
+
+volumes:
+  uploads:
+  logs:
+
+networks:
+  careerforge-net:
+    driver: bridge
